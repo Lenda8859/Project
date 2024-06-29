@@ -1,3 +1,6 @@
+#Создание консольных приложений вида REPL
+
+
 import csv
 def load_zip_date(file_path):
     zip_data = {}
@@ -91,5 +94,7 @@ def repl(zip_data):
             print("Invalid command, ignoring")
 
 repl(zip_data)
+
+
 
 
