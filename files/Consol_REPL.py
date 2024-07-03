@@ -1,6 +1,7 @@
 #Создание консольных приложений вида REPL
 
 import csv
+import os
 
 def load_zip_date(file_path):
     zip_data = {}
@@ -35,7 +36,7 @@ def loc(zip_code, zip_data):
     else:
         print("Неверный или неизвестный почтовый индекс")
 
-file_path = r'D:\_ITMO\Python-Расширенные возможности\Demo\files\zip_codes_states.csv'
+file_path = './zip_codes_states.csv'
 zip_data = load_zip_date(file_path)
 
 
