@@ -1,10 +1,14 @@
 #Создание консольных приложений вида REPL
 
 import csv
+import requests
+import io
 
 def load_zip_date(file_path):
     zip_data = {}
-    with open(file_path, newline='', encoding='utf-8') as csvfile:
+    response = requests.get(file_path)
+    if response.status_code == 200:
+        csvfile = io.StringIO(response.text)
         reader = csv.DictReader(csvfile)
         for row in reader:
             zip_code = row['zip_code']
@@ -35,7 +39,7 @@ def loc(zip_code, zip_data):
     else:
         print("Неверный или неизвестный почтовый индекс")
 
-file_path = r'D:\_ITMO\Python-Расширенные возможности\Demo\files\zip_codes_states.csv'
+file_path = 'https://raw.githubusercontent.com/Lenda8859/Project/main/files/zip_codes_states.csv'
 zip_data = load_zip_date(file_path)
 
 
@@ -44,7 +48,7 @@ zip_data = load_zip_date(file_path)
 def zip(city, state, zip_data):
     found_zip_codes = [zip_code for zip_code, info in zip_data.items() if info['город'].lower() and info['штат'].lower() == state.lower()]
     if found_zip_codes:
-        print(f"Следущтй почтовый индекс найденный для {city}, {state}: {', '.join(found_zip_codes)}")
+        print(f"Следущий почтовый индекс найденный для {city}, {state}: {', '.join(found_zip_codes)}")
     else:
         print(f"Почтовый индекс не найден для {city}, {state}")
 
