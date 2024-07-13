@@ -1,8 +1,12 @@
 #Создание консольных приложений вида REPL
 
 import csv
+<<<<<<< HEAD
 import requests
 import io
+=======
+import os
+>>>>>>> 29c515b431a0c46d576edf118894d49faef3895f
 
 def load_zip_date(file_path):
     zip_data = {}
@@ -39,7 +43,11 @@ def loc(zip_code, zip_data):
     else:
         print("Неверный или неизвестный почтовый индекс")
 
+<<<<<<< HEAD
 file_path = 'https://raw.githubusercontent.com/Lenda8859/Project/main/files/zip_codes_states.csv'
+=======
+file_path = './zip_codes_states.csv'
+>>>>>>> 29c515b431a0c46d576edf118894d49faef3895f
 zip_data = load_zip_date(file_path)
 
 
