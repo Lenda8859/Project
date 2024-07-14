@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f43bd23-f8da-423d-81e5-f68c85e9499c" name="Changes" comment="&quot;Добавлены файлы doc_testy2.py и doc_testy3.py&quot;">
-      <change afterPath="$PROJECT_DIR$/files/unitest_script_cafe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/unitest_test_cafe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/unitest_test_loyalty_card_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8f43bd23-f8da-423d-81e5-f68c85e9499c" name="Changes" comment="&quot;Добавлены unitesty" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,12 +161,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719944114631</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;Добавлены unitesty">
+      <option name="closed" value="true" />
+      <created>1720964662140</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720964662140</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание класса Personazh и тестирование" />
     <MESSAGE value="Создание класса Personazh и тестирование&#10;поправлена ошибка в строке 75" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание класса Personazh и тестирование&#10;поправлена ошибка в строке 75" />
+    <MESSAGE value="&quot;Добавлены unitesty" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Добавлены unitesty" />
   </component>
 </project>

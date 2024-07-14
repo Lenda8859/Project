@@ -1,0 +1,80 @@
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: tea
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: espresso
+WARNING:root:Напиток не найден в меню: mocha
+INFO:root:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: coffee
+INFO:root:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:root:Тестирование успешного заказа...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: tea
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: espresso
+WARNING:root:Напиток не найден в меню: mocha
+INFO:root:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: coffee
+INFO:root:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:root:Тестирование успешного заказа...
+INFO:root:Заказ принят: coffee
+INFO:testLogger:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование нескольких заказов...
+WARNING:root:Напиток не найден в меню: coffe
+INFO:root:Заказ принят: latte
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование нескольких заказов...
+WARNING:root:Напиток не найден в меню: coffe
+INFO:root:Заказ принят: latte
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+WARNING:root:Напиток не найден в меню: coffe
+INFO:testLogger:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: coffee
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+INFO:root:Заказ принят: coffee
+INFO:testLogger:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: coffee
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+INFO:root:Заказ принят: coffee
+INFO:testLogger:Тестирование нескольких заказов...
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: coffee
+INFO:root:Заказ принят: latte
+INFO:testLogger:Тестирование неудачного заказа...
+WARNING:root:Напиток не найден в меню: mocha
+INFO:testLogger:Тестирование успешного заказа...
+INFO:root:Заказ принят: coffee
