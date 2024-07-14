@@ -1,0 +1,18 @@
+[
+    {
+        "make": "BMW",
+        "model": "X5",
+        "year": 2020,
+        "mileage": 16000,
+        "last_service_date": "2023-01-01",
+        "issues": ["Износ тормозных колодок", "Утечка масла"]
+    },
+    {
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2019,
+        "mileage": 14000,
+        "last_service_date": "2023-05-15",
+        "issues": []
+    }
+]

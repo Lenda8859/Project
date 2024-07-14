@@ -1,0 +1,4 @@
+# Автомобили для автотестирования
+Toyota,Camry,2018,16000,2023-01-15,brake pads,engine oil
+Honda,Civic,2017,14000,2022-06-10,air filter
+Ford,Focus,2019,10000,2023-07-20,
