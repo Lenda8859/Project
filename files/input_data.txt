@@ -1,4 +1,0 @@
-card_number: 12345
-add_points: 100
-add_discount: 0.15
-purchase: 200
