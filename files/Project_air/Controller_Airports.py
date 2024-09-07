@@ -1,6 +1,9 @@
 from Model_Airport import AirportDatabase
 from View_Airports import AirportView
 from tkinter import Tk
+import os
+from dotenv import load_dotenv
+
 
 class AirportController:
     """
@@ -97,12 +100,14 @@ class AirportController:
         self.db.close()
 
 if __name__ == "__main__":
+    load_dotenv()
+
     db_config = {
-        'user': 'KsuLenda',
-        'password': 'mazda885889',
-        'host': '127.0.0.1',
-        'database': 'air_base',
-        'port': 3306
+        'user': os.getenv('DB_USER'),
+        'password': os.getenv('DB_PASSWORD'),
+        'host': os.getenv('DB_HOST'),
+        'database': os.getenv('DB_NAME'),
+        'port': int(os.getenv('DB_PORT', 3306))
     }
     controller = AirportController(db_config)
     controller.run()
