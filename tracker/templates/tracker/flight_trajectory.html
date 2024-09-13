@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Траектория полёта{% endblock %}
+
+{% block content %}
+<h2>Траектория полёта для ICAO24: {{ icao24 }}</h2>
+
+<!-- Проверяем, есть ли данные о полёте -->
+{% if flight_data and flight_data|length > 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th>ICAO24</th>
+                <th>Позывной (Callsign)</th>
+                <th>Аэропорт вылета</th>
+                <th>Аэропорт прибытия</th>
+                <th>Время первого обнаружения</th>
+                <th>Время последнего обнаружения</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Перебираем данные о полёте и выводим их -->
+            {% for flight in flight_data %}
+            <tr>
+                <td>{{ flight.icao24 }}</td>
+                <td>{{ flight.callsign|default:"Неизвестно" }}</td>
+                <td>{{ flight.estDepartureAirport|default:"Неизвестно" }}</td>
+                <td>{{ flight.estArrivalAirport|default:"Неизвестно" }}</td>
+                <td>{{ flight.firstSeen|date:"Y-m-d H:i:s" }}</td>
+                <td>{{ flight.lastSeen|date:"Y-m-d H:i:s" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Нет данных о траектории полёта для введённого ICAO24 и временного интервала.</p>
+{% endif %}
+
+{% endblock %}

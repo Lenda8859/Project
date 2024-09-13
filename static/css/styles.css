@@ -1,0 +1,139 @@
+/* Основные стили для страницы */
+body {
+    background-color: #696969; /* Светло-серый цвет фона */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для кнопок навигации */
+.auth-button {
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #A9A9A9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.auth-button:hover {
+    background-color: #495057;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+/* Стили для таблицы */
+.table-container {
+    max-height: 400px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%; /* Таблица на всю ширину */
+    border-collapse: collapse; /* Убираем промежутки между ячейками */
+    background-color: #343a40; /* Тёмный фон для таблицы */
+    color: #ffffff; /* Белый текст */
+    border: 1px solid white; /* Граница таблицы */
+}
+
+th, td {
+    padding: 0.5px;
+    text-align: left;
+    border: 1px solid #000000; /* Черные линии для границ */
+}
+
+th {
+    background-color: #495057; /* Тёмный фон для заголовков */
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #3c3f44; /* Чередование цвета строк */
+}
+
+tr:hover {
+    background-color: #565a5f; /* Фон строки при наведении */
+}
+
+/* Стили для кнопок "Добавить в избранное" */
+.favorite-button {
+    padding: 8px 12px;
+    background-color: #343a40; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    border: 2px solid #495057; /* Объём за счёт границы */
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Объемная тень */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.favorite-button:hover {
+    background-color: #495057; /* Светлее при наведении */
+    transform: translateY(-2px); /* Поднимается при наведении */
+}
+
+/* Стили для полосы прокрутки */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border-radius: 5px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: #343a40;
+}
+
+/* Стили для формы фильтрации */
+.filter-container {
+    background-color: #343a40; /* Темный фон формы фильтрации */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Стили для полей ввода в форме фильтрации */
+.filter-container input {
+    padding: 8px;
+    margin-right: 10px;
+    background-color: #3c3f44; /* Темный фон для полей ввода */
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Стили для кнопок в форме фильтрации */
+.filter-container button,
+.filter-container a {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Стили для кнопок "Применить фильтр" и "Отменить фильтр" */
+.reset-filter-button {
+    padding: 8px 12px;
+    background-color: #495057; /* Тот же фон для обеих кнопок */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reset-filter-button:hover {
+    background-color: #565a5f; /* Светлее при наведении */
+    transform: translateY(-2px); /* Поднимается при наведении */
+}
