@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>SKY</h2>
+
+<!-- Форма для выбора интервала времени для отображения траектории -->
+<h2>Поиск траектории полёта</h2>
+
+<form method="get" action="{% url 'flight_trajectory' %}">
+    <label for="icao24">ID воздушного судна (ICAO24):</label>
+    <input type="text" id="icao24" name="icao24" required>
+
+    <label for="start_time">Начало интервала:</label>
+    <input type="datetime-local" id="start_time" name="start_time" required>
+
+    <label for="end_time">Конец интервала:</label>
+    <input type="datetime-local" id="end_time" name="end_time" required>
+
+    <button type="submit" class="favorite-button">Показать траекторию</button>
+</form>
+
+<!-- Контейнер для карты -->
+<div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+
+<!-- Форма фильтрации самолётов -->
+<div class="filter-container">
+    <form method="get" action="{% url 'aircrafts' %}">
+        <label for="icao24">ID воздушного судна:</label>
+        <input type="text" id="icao24" name="icao24" value="{{ form.icao24.value }}">
+
+        <label for="country">Страна:</label>
+        <input type="text" id="country" name="country" value="{{ form.country.value|default_if_none:'' }}">
+
+        <label for="min_latitude">Мин. широта:</label>
+        <input type="number" step="any" id="min_latitude" name="min_latitude" value="{{ form.min_latitude.value|default_if_none:'' }}">
+
+        <label for="max_latitude">Макс. широта:</label>
+        <input type="number" step="any" id="max_latitude" name="max_latitude" value="{{ form.max_latitude.value|default_if_none:'' }}">
+
+        <label for="min_longitude">Мин. долгота:</label>
+        <input type="number" step="any" id="min_longitude" name="min_longitude" value="{{ form.min_longitude.value|default_if_none:'' }}">
+
+        <label for="max_longitude">Макс. долгота:</label>
+        <input type="number" step="any" id="max_longitude" name="max_longitude" value="{{ form.max_longitude.value|default_if_none:'' }}">
+
+        <button type="submit" class="favorite-button">Применить фильтр</button>
+        <a href="{% url 'aircrafts' %}" class="favorite-button">Сбросить фильтр</a>
+    </form>
+</div>
+
+<!-- Таблица с данными о воздушных судах -->
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID воздушного судна</th>
+                <th>Страна происхождения</th>
+                <th>Широта</th>
+                <th>Долгота</th>
+                <th>Избранное</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if aircrafts and aircrafts|length > 0 %}
+                {% for aircraft in aircrafts %}
+                <tr>
+                    <td>{{ aircraft.0|default_if_none:"Неизвестно" }}</td>
+                    <td>{{ aircraft.2|default_if_none:"Неизвестно" }}</td>
+                    <td>{{ aircraft.6|default_if_none:"Неизвестно" }}</td>
+                    <td>{{ aircraft.5|default_if_none:"Неизвестно" }}</td>
+                    <td>
+                        <form method="post" action="{% url 'toggle_favorite' aircraft.0 %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="aircraft_data" value="{{ aircraft.2 }},{{ aircraft.6 }},{{ aircraft.5 }}">
+                            <button type="submit" class="favorite-button">
+                                {% if aircraft.0 in favorite_aircraft_ids %}
+                                    Убрать из избранного
+                                {% else %}
+                                    Добавить в избранное
+                                {% endif %}
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5">Ничего не найдено по вашему запросу.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Функция для работы с картой -->
+<script>
+  function initAircraftMap() {
+    var location;
+
+    // Проверяем, есть ли данные о широте и долготе первого самолёта
+    var lat = parseFloat("{{ aircrafts.0.6|default:'37.7749'|escapejs }}");
+    var lng = parseFloat("{{ aircrafts.0.5|default:'-122.4194'|escapejs }}");
+
+    console.log("Координаты самолёта:", lat, lng); // Для отладки
+
+    // Проверяем на наличие корректных координат
+    if (isNaN(lat) || isNaN(lng)) {
+      console.error("Некорректные координаты, используются координаты по умолчанию.");
+      lat = 37.7749;  // Координаты по умолчанию (Сан-Франциско)
+      lng = -122.4194;
+    }
+
+    location = {lat: lat, lng: lng};
+
+    // Создание карты
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: location
+    });
+
+    // Добавляем маркер только если есть данные
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+
+  // Объявление функции initMap, которая будет вызвана после загрузки API
+  window.initMap = function() {
+    initAircraftMap();  // Вызов основной функции
+  };
+</script>
+
+<!-- Загрузка Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRcE9aei9FlywgMOyvoQUqTUpZsNIluI0&callback=initMap"></script>
+
+{% endblock %}
