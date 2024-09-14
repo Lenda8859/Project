@@ -22,9 +22,9 @@ services:
     image: postgres:13
     container_name: my_postgres_db
     environment:
-      POSTGRES_USER: db_user
-      POSTGRES_PASSWORD: db_password
-      POSTGRES_DB: db_name
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: kia8585
+      POSTGRES_DB: sky
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
