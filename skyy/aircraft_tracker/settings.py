@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'sky',
         'USER': 'postgres',
         'PASSWORD': 'kia8585',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432'
     }
 }
