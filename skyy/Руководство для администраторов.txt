@@ -6,7 +6,7 @@
 	
 	Клонирование репозитория проекта: 
 	Склонируйте репозиторий с исходным кодом проекта:
-	git clone https://github.com/Lenda8859/Project
+	git clone https://github.com/Lenda8859/Project.git
 	cd skyy
 
 
