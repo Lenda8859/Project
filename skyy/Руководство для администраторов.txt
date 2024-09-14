@@ -7,7 +7,7 @@
 	Клонирование репозитория проекта: 
 	Склонируйте репозиторий с исходным кодом проекта:
 	git clone https://github.com/Lenda8859/Project.git
-	cd skyy
+	cd Project/skyy
 
 
 	Запуск с Docker Compose: В корневой директории проекта должен находиться файл docker-compose.yml. 
